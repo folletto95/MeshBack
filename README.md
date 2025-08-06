@@ -1,6 +1,7 @@
 # MeshBack
 
 Utility to backup and restore Meshtastic device configuration and build
+
 standalone executables for each platform.
 
 ## Building executables
@@ -21,3 +22,4 @@ Once built, launch the executable. The GUI allows you to:
 - View available serial ports and connect/disconnect
 - Backup the connected device (files are named `<node>_<fw>_<timestamp>.bin`)
 - Restore from a previously saved backup
+
