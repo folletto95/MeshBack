@@ -1,27 +1,25 @@
 # MeshBack
 
 Utility to backup and restore Meshtastic device configuration and build
-standalone executables for multiple platforms.
+
+standalone executables for each platform.
 
 ## Building executables
 
-Install dependencies and run the build script:
+Install dependencies and run the build script on the target platform:
 
 ```bash
 pip install meshtastic pyinstaller
 ./build.sh
 ```
 
-The resulting binaries will be placed under `dist/linux` and
-`dist/windows` (the latter requires `wine`).
+The resulting binary for the host OS will be placed under `dist/`.
 
 ## Usage
 
-Once built, run the executable with:
+Once built, launch the executable. The GUI allows you to:
 
-```bash
-./meshback backup /dev/ttyUSB0 config.bin
-./meshback restore /dev/ttyUSB0 config.bin
-```
+- View available serial ports and connect/disconnect
+- Backup the connected device (files are named `<node>_<fw>_<timestamp>.bin`)
+- Restore from a previously saved backup
 
-Replace the serial port and file paths as needed.
