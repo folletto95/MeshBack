@@ -46,10 +46,15 @@ def backup(iface: SerialInterface) -> Path:
     node_name = iface.getLongName() or "node"
     fw = _fetch_firmware_version(iface) or "fw"
     timestamp = _dt.datetime.now().strftime("%Y%m%d_%H%M%S")
-    filename = f"{_sanitize(node_name)}_{_sanitize(fw)}_{timestamp}.bin"
+    safe_name = _sanitize(node_name)
+    safe_fw = _sanitize(fw)
+    filename = f"{safe_name}_{safe_fw}_{timestamp}.bin"
+
+    node_dir = Path(safe_name)
+    node_dir.mkdir(parents=True, exist_ok=True)
 
     config = iface.getConfig()
-    path = Path(filename)
+    path = node_dir / filename
     path.write_bytes(config.SerializeToString())
     return path
 
