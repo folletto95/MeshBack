@@ -23,11 +23,13 @@ pyinstaller --onefile -n meshback meshback.py
 
 # Cross-compile Windows executable using Nuitka + mingw
 python -m nuitka \
-  --mingw64 \
   --onefile \
   --enable-plugin=tk-inter \
   --output-dir=dist \
   --output-filename=meshback.exe \
+  --mingw64 \
+  --target-os=Windows \
+  --target-arch=x86_64 \
   meshback.py
 
 deactivate
