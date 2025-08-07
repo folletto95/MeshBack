@@ -11,7 +11,9 @@ python3 -m venv venv
 source venv/bin/activate
 pip install --upgrade pip
 pip install -r requirements.txt
+
 pyinstaller --onefile -n meshback meshback.py
+
 deactivate
 
 # Build Windows executable via Wine
@@ -27,3 +29,4 @@ WIN_SCRIPT=$(winepath -w "$(pwd)/meshback.py")
 wine pyinstaller --onefile -n meshback "$WIN_SCRIPT"
 
 echo "Executables stored in dist/: meshback (Linux) and meshback.exe (Windows)"
+

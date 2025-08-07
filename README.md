@@ -5,6 +5,7 @@ standalone executables for each platform.
 
 ## Building executables
 
+
 Run the provided script on a Linux host. It installs the required packages,
 builds the native binary and cross-compiles a Windows `.exe` using Wine:
 
@@ -23,4 +24,5 @@ Once built, launch the `meshback` executable. The GUI allows you to:
 - Backup the connected device (files are stored under a folder named after the
   node as `<node>/<node>_<fw>_<timestamp>.bin`)
 - Restore from a previously saved backup
+
 
