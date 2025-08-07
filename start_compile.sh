@@ -11,7 +11,9 @@ python3 -m venv venv
 source venv/bin/activate
 pip install --upgrade pip
 pip install -r requirements.txt
-pyinstaller --onefile -n backup_restore backup_restore.py
+
+pyinstaller --onefile -n meshback meshback.py
+
 deactivate
 
 # Build Windows executable via Wine
@@ -23,7 +25,8 @@ fi
 wine "$PY_INSTALLER" /quiet InstallAllUsers=1 PrependPath=1
 wine pip install --upgrade pip
 wine pip install meshtastic pyinstaller
-WIN_SCRIPT=$(winepath -w "$(pwd)/backup_restore.py")
-wine pyinstaller --onefile -n backup_restore "$WIN_SCRIPT"
+WIN_SCRIPT=$(winepath -w "$(pwd)/meshback.py")
+wine pyinstaller --onefile -n meshback "$WIN_SCRIPT"
 
-echo "Executables stored in dist/: backup_restore (Linux) and backup_restore.exe (Windows)"
+echo "Executables stored in dist/: meshback (Linux) and meshback.exe (Windows)"
+
