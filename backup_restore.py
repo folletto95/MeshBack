@@ -47,6 +47,7 @@ def backup(iface: SerialInterface) -> Path:
     fw = _fetch_firmware_version(iface) or "fw"
     timestamp = _dt.datetime.now().strftime("%Y%m%d_%H%M%S")
 
+
     safe_name = _sanitize(node_name)
     safe_fw = _sanitize(fw)
     filename = f"{safe_name}_{safe_fw}_{timestamp}.bin"
@@ -150,4 +151,3 @@ class App(tk.Tk):
 
 if __name__ == "__main__":
     App().mainloop()
-
