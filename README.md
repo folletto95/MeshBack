@@ -5,14 +5,16 @@ standalone executables for each platform.
 
 ## Building executables
 
-Install dependencies and run the build script on the target platform:
+
+Run the provided script on a Linux host. It installs the required packages,
+builds the native binary and cross-compiles a Windows `.exe` using Wine:
 
 ```bash
-pip install meshtastic pyinstaller
-./build.sh
+./start_compile.sh
 ```
 
-The resulting binary for the host OS will be placed under `dist/`.
+The resulting binaries are placed under `dist/` as `backup_restore` (Linux) and
+`backup_restore.exe` (Windows).
 
 ## Usage
 
