@@ -8,7 +8,8 @@ standalone executables for each platform.
 Run the provided script on a Linux host. It sets up a Python virtual
 environment, builds the native binary with PyInstaller and cross-compiles a
 Windows `.exe` via Nuitka using the mingw-w64 toolchain—no Windows Python
-download required:
+download required. The script installs `python3-venv`, `mingw-w64`, and
+`patchelf` (needed by Nuitka on Linux) before building:
 
 ```bash
 ./start_compile.sh
