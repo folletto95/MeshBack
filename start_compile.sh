@@ -7,7 +7,7 @@ set -e
 # Install system dependencies
 sudo apt-get update
 
-sudo apt-get install -y python3-venv mingw-w64
+sudo apt-get install -y python3-venv mingw-w64 patchelf
 
 # Create and activate virtual environment
 
