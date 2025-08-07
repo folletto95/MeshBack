@@ -5,9 +5,10 @@ standalone executables for each platform.
 
 ## Building executables
 
-
-Run the provided script on a Linux host. It installs the required packages,
-builds the native binary and cross-compiles a Windows `.exe` using Wine:
+Run the provided script on a Linux host. It sets up a Python virtual
+environment, builds the native binary with PyInstaller and cross-compiles a
+Windows `.exe` via Nuitka using the mingw-w64 toolchain—no Windows Python
+download required:
 
 ```bash
 ./start_compile.sh
