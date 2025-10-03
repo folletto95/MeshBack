@@ -28,8 +28,6 @@ python -m nuitka \
   --output-dir=dist \
   --output-filename=meshback.exe \
   --mingw64 \
-  --target-os=Windows \
-  --target-arch=x86_64 \
   meshback.py
 
 deactivate
